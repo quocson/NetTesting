@@ -49,6 +49,6 @@ jobs:
     - name: Run Test
       uses: quocson/dotnet-unit-test-action@main
       with:
-        inputs.pattern: "*Test.dll"
+        pattern: "*Test.dll"
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
