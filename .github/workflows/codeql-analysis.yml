@@ -47,7 +47,7 @@ jobs:
       run: |
         msbuild.exe Testing.sln /p:UseSharedCompilation=false
     - name: Run tests
-      uses: microsoft-approved-actions/vstest@master
+      uses: microsoft/vstest-action@v1.0.0
       with:
         testAssembly: '*Test.dll'
         searchFolder: ./
