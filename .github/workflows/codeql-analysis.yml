@@ -11,7 +11,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: windows-2016
+    runs-on: windows-latest
     permissions:
       actions: read
       contents: read
@@ -49,6 +49,7 @@ jobs:
     - name: Run tests
       uses: microsoft/vstest-action@v1.0.0
       with:
+        testAssembly: '**\\*Test.dll\n!**\\*TestAdapter.dll\n!**\\obj\\**'
         searchFolder: ./
         runInParallel: true
     - name: Perform CodeQL Analysis
