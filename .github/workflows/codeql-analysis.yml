@@ -46,9 +46,11 @@ jobs:
     - name: Build Solution
       run: |
         msbuild.exe Testing.sln /p:UseSharedCompilation=false
-    - name: Run Test
-      uses: quocson/dotnet-unit-test-action@main
+    - name: Run tests
+      uses: microsoft-approved-actions/vstest@master
       with:
-        pattern: "*Test.dll"
+        testAssembly: '*Test.dll'
+        searchFolder: ./
+        runInParallel: true
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
