@@ -49,7 +49,7 @@ jobs:
     - name: Run tests
       uses: microsoft/vstest-action@v1.0.0
       with:
-        testAssembly: '*Test.dll'
+        testAssembly: '**\\*Test.dll'
         searchFolder: ./
         runInParallel: true
     - name: Perform CodeQL Analysis
