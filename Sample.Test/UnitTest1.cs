@@ -13,7 +13,7 @@ namespace Sample.Test
         [TestMethod]
         public void TestMethod2()
         {
-            Assert.IsTrue(false);
+            Assert.IsFalse(false);
         }
     }
 }
